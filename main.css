@@ -145,6 +145,11 @@
     display: flex; 
 }
 
+.lineSearch a {
+  text-decoration: none;
+  color: #000;
+}
+
 .athletic {
     font-size: 48px;
     margin-right: 60px;
@@ -213,6 +218,11 @@
 
 .side {
     display: flex;
+}
+
+.side a {
+  text-decoration: none;
+  color: #000;
 }
 
 .discount {
@@ -423,9 +433,19 @@
     height: 95px;
 }
 
+.card1 img {
+  width: 50px;
+}
 
+.cardFr {
+  border: 1px solid black;
+  margin-right: 5px;
+}
 
-
+.card a {
+  text-decoration: none;
+  color: #000;
+}
 
 
 
@@ -536,7 +556,137 @@
 
 
 
+.page-container {
+  display: flex;
+  width: 100%;
+}
 
+/* Стилі для основного контенту (лівий блок) */
+.main-content {
+  width: 1500px;
+  min-height: 100vh;
+}
+
+/* Стилі для бокового меню фільтрів */
+.sidebar-filter {
+  width: 350px;
+  min-height: 100vh;
+  margin-left: 20px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.filter-section {
+  margin-bottom: 20px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 24px;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.price-range {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.price-slider {
+  flex-grow: 1;
+  height: 4px;
+  background: #ddd;
+  position: relative;
+  margin: 0 10px;
+}
+
+.price-slider::before,
+.price-slider::after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background: #3f51b5;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.price-slider::before {
+  left: 20%;
+}
+
+.price-slider::after {
+  right: 30%;
+}
+
+.price-inputs {
+  display: flex;
+  align-items: center;
+}
+
+.price-inputs input {
+  width: 60px;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-align: center;
+  margin: 0 5px;
+}
+
+.price-inputs span {
+  margin: 0 5px;
+}
+
+.search-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.search-button svg {
+  width: 20px;
+  height: 20px;
+}
+
+.radio-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+}
+
+.radio-option input[type="radio"] {
+  margin-right: 8px;
+}
+
+.apply-button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  background-color: #e0e0e0;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.apply-button:hover {
+  background-color: #d0d0d0;
+}
 
 
 
@@ -693,6 +843,9 @@
 .appImages a {
   text-decoration: none;
 }
+.hide {
+  display: none;
+}
 
 /* адаптивність */
 
@@ -749,48 +902,109 @@
   .header {
     height: auto;
     padding-bottom: 10px;
-    flex-direction: column;
+  }
+
+  .slider {
+    height: 10px;
+    width: 15px;
+  }
+
+  .slider::before {
+    height: 8px;
+    width: 8px;
+    left: 2px;
+    top: 1px;
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(3px);
+  }
+
+  .switch {
+    margin: 5px 0 0 0;
+    width: 20px;
   }
 
   .regulation {
     justify-content: end;
-    margin-right: 25px;
   }
 
   .toggle-label {
-    font-size: 12px;
+    font-size: 8px;
     margin-left: 5px;
+    margin-top: -6px;
+  }
+
+  .magnifer {
+    width: 10px;
+    height: 10px;
+    border: 1px solid black;
+  }
+
+  .magnifer::after {
+    height: 7px;
+    right: -2px;
+    bottom: -5px;
+    width: 1px;
   }
 
   .language {
     margin-right: 0;
     justify-content: center;
+    margin-top: 1px;
+  }
+
+  .lineVert button {
+    font-size: 9px;
+  }
+
+  .language button {
+    font-size: 9px;
+  }
+
+  .lineVert::after {
+    height: 15px;
+    margin-top: 3px;
+    width: 1px;
   }
 
   .SerchSection {
-    flex-direction: column;
     align-items: center;
+    margin-top: -25px;
+  }
+  
+  .search {
+    width: 125px;
+    height: 24px;
+    padding: 0;
+    margin: 17px 0 0 0;
+    border-radius: 3px 0 0 3px;
   }
 
-  .lineSearch {
-    display: block;
+  .search::placeholder {
+    font-size: 10px;
   }
 
   .athletic {
-    font-size: 38px;
-    margin: 10px 0;
-    text-align: center;
-  }
-
-  .search {
-    width: 90%;
+    font-size: 13px;
+    margin: 0;
+    margin-top: 24px;
+    margin-right: 19px;
+    padding: 0;
+    width: 100%;
   }
 
   .search-icon {
     margin-left: 0;
-    position: static;
-    width: 35px;
-    margin-left: 295px;
+    width: 25px;
+    height: 24px;
+    margin-left: 124px;
+    margin-top: -24px;
+    border-radius: 0 3px 3px 0;
+  }
+
+  .searchForm {
+    height: 24px;
   }
 
   .side {
@@ -800,17 +1014,23 @@
   }
 
   .discount {
-    width: 90%;
-    margin-bottom: 10px;
-    margin-right: 0;
+    width: 41px;
+    height: 24px;
+    font-size: 10px;
+    margin-top: 7px;
+    margin-right: 8px;
   }
 
   .photo2 {
-    margin: 5px auto;
+    height: 25px;
+    width: 26px;
+    margin-right: 5px;
   }
 
   .photo1 {
-    margin: 5px 10px auto 35px;
+    height: 25px;
+    width: 26px;
+    margin-right: 5px;
   }
 
   .centr {
@@ -822,18 +1042,42 @@
   }
 
   .description {
-    flex-direction: column;
     height: auto;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     text-align: center;
   }
 
   .photo3 {
-    margin: 10px auto;
+    margin: 20px auto 0;
+    height: 38px;
+    width: 41px;
+  }
+  .text1 {
+    font-size: 5.5px;
+    font-weight: 500;
+  }
+  .text2 {
+    font-size: 5.5px;
+    font-weight: 500;
+  }
+  .text3 {
+    font-size: 5.5px;
+    font-weight: 500;
+  }
+  .text4 {
+    font-size: 5.5px;
+    font-weight: 500;
+  }
+  .text5 {
+    font-size: 5.5px;
+    font-weight: 500;
+  }
+  .brand-name {
+    font-size: 8px;
   }
 
-  .boxImages {
-    flex-direction: column;
+  .banner {
+    margin-right: 5px;
   }
 
   .image-container1,
@@ -842,16 +1086,215 @@
     height: 200px;
   }
 
-  .foot2 {
-    flex-direction: column;
-  }
-
   .commun,
   .ending {
     margin-left: 20px;
   }
+  .ending {
+    padding-bottom: 50px;
+  }
 
   .appImages {
     margin-left: 20px;
+    display: flex;
+  }
+  .appImages a {
+    width: 37px;
+    height: 30px;
+  }
+
+  .app1 {
+    width: 40px;
+    height: 30px;
+  }
+  .app2 {
+    width: 40px;
+    height: 30px;
+  }
+  .app3 {
+    width: 35px;
+    height: 30px;
+  }
+
+  .email-input {
+    width: 400px;
+  }
+  .reg {
+    font-size: 18px;
+  }
+  .adress {
+    font-size: 8px;
+    font-weight: 500;
+  }
+  .inputLine {
+    font-size: 8px;
+    width: 214px;
+    margin-left: 90px;
+  }
+  .tin1 {
+    margin-left: 90px;
+    margin-top: 3px;
+    font-size: 10px;
+  }
+  .current1 {
+    font-size: 8px;
+    margin: 0 0 0 5px;
+  }
+  .current2 {
+    font-size: 8px;
+  }
+  .breadcrumbs {
+    padding: 5px 0 0 0;
+  }
+
+  .breadcrumbs .separator {
+    font-size: 9px;
+    margin: 2px 4px 0 0;
+    font-weight: 500;
+  }
+  .submit-btn {
+    width: 110px;
+    height: 28px;
+    font-size: 10px;
+    margin: -20px 0 0 0;
+  }
+  .stroc1  {
+    font-size: 10px;
+  }
+  .stroc2  {
+    font-size: 10px;
+  }
+  .stroc3  {
+    font-size: 10px;
+  }
+  .stroc4  {
+    font-size: 10px;
+  }
+  .inforOne {
+    font-size: 12px;
+  }
+  .inforTwo {
+    font-size: 12px;
+  }
+  .email-input {
+    width: 100%;
+  }
+  .barHeader {
+    display: none;
+  }
+  .Categories {
+    display: none;
+  }
+  .side1 {
+    display: none;
+  }
+  .photo {
+    width: 100%;
+    height: 356px;
+  }
+  .textUnder1 {
+    margin-left: 10px;
+    font-size: 30px;
+  }
+  .textUnder2 {
+    margin-left: 10px;
+    font-size: 30px;
+  }
+  .textUnder3 {
+    margin-left: 10px;
+    font-size: 30px;
+  }
+  .hide {
+    display: block;
+  }
+  .hideText {
+    font-size: 18px;
+    margin: 15px 0 0 10px;
+  }
+  .text-over {
+    margin-top: 10px;
+  }
+  .hideCont {
+    display: flex;
+  }
+  .cardHide {
+    border: 2px solid #333;
+    border-radius: 3px;
+    display: flex;
+    width: 90px;
+    margin-left: 12px;
+    margin-right: 20px;
+    margin-top: 30px;
+    height: 71px;
+  }
+  .cardHide:last-of-type {
+    margin-right: 12px;
+  }
+  .section-title1 {
+    font-size: 13px;
+    margin-left: 10px;
+  }
+  .card {
+    width: 65px;
+    height: 26px;
+  }
+  .section-title {
+    font-size: 15px;
+    margin-left: 10px;
+  }
+  .v2 {
+    font-size: 8px;
+  }
+  .cur1 {
+    margin-top: 55px;
+    width: 22px;
+    height: 22px;
+    margin-left: 10px;
+  }
+
+  .cur2 {
+    margin-top: 55px;
+    width: 22px;
+    height: 22px;
+    margin-left: 5px;
+  }
+
+  .vH {
+    font-size: 10px;
+    font-weight: 500;
+    margin: 0;
+  }
+  .r1 {
+    margin: 50px 0 0 9px;
+  }
+  .r2 {
+    margin: 50px 0 0 2px;
+  }
+  .r3 {
+    margin: 45px 0 0 8px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 668px) {
+  .adress {
+    font-size: 7px;
   }
 }

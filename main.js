@@ -4,9 +4,9 @@ const themeToggle = document.getElementById("themeToggle");
 
 themeToggle.addEventListener("change", function() {
     if(themeToggle.checked) {
-        document.body.style.backgroundColor = '#000'; // колір body
+        document.body.style.backgroundColor = '#1E1E1E'; // колір body
         document.querySelectorAll('.inputLine').forEach(function(input) {
-          input.style.backgroundColor = '#000'; // колір фону полей вводу
+          input.style.backgroundColor = '#1E1E1E'; // колір фону полей вводу
           input.style.color = '#fff'; // колір полей вводу
       });
       document.querySelectorAll('.tin1').forEach(function(label) {
@@ -37,11 +37,17 @@ themeToggle.addEventListener("change", function() {
       document.querySelectorAll('.liked2').forEach(function(div) {
         div.style.color = '#fff'; // колір реєстрація заголовок
       }); 
+      document.querySelectorAll('.section-title').forEach(function(div) {
+        div.style.color = '#fff'; // колір реєстрація заголовок
+      }); 
+      document.querySelectorAll('.section-title1').forEach(function(div) {
+        div.style.color = '#fff'; // колір реєстрація заголовок
+      }); 
       document.querySelectorAll('.v2').forEach(function(div) {
         div.style.color = '#fff'; // колір реєстрація заголовок
       }); 
       document.querySelectorAll('.barHeader').forEach(function(div) {
-        div.style.background = '#000'; // колір реєстрація заголовок
+        div.style.background = '#1E1E1E'; // колір реєстрація заголовок
       });
         isBlack = true;
         themeLabel.textContent = 'Темна версія';
@@ -77,6 +83,12 @@ themeToggle.addEventListener("change", function() {
         a.style.color = '#000'; // колір реєстрація заголовок
       }); 
       document.querySelectorAll('.liked2').forEach(function(div) {
+        div.style.color = '#000'; // колір реєстрація заголовок
+      }); 
+      document.querySelectorAll('.section-title').forEach(function(div) {
+        div.style.color = '#000'; // колір реєстрація заголовок
+      }); 
+      document.querySelectorAll('.section-title1').forEach(function(div) {
         div.style.color = '#000'; // колір реєстрація заголовок
       }); 
       document.querySelectorAll('.v2').forEach(function(div) {
