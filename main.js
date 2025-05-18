@@ -1,70 +1,176 @@
+let isBlack = false;
+
+const themeToggle = document.getElementById("themeToggle");
+
 themeToggle.addEventListener("change", function () {
   if (themeToggle.checked) {
-      applyDarkTheme();
+    applyDarkTheme();
   } else {
-      applyLightTheme();
+    applyLightTheme();
   }
 });
 
 function applyDarkTheme() {
-  document.body.style.backgroundColor = '#000';
-  document.querySelectorAll('.tin1').forEach(label => label.style.backgroundColor = '#000');
-  document.querySelectorAll('.tin1').forEach(label => label.style.color = '#fff');
-  document.querySelectorAll('.inputLine').forEach(input => {
-    input.style.backgroundColor = '#000';
-    input.style.borderColor = '#fff';
-});
-  document.querySelectorAll('.current2').forEach(a => a.style.color = '#fff');
-  document.querySelectorAll('.reg').forEach(h1 => h1.style.color = '#fff');
-  document.querySelectorAll('.submit-btn').forEach(button => {
-      button.style.color = '#fff';
-      button.style.backgroundColor = 'gray';
+  document.body.style.backgroundColor = '#1E1E1E'; // колір body
+
+  document.querySelectorAll('.inputLine').forEach(function (input) {
+    input.style.backgroundColor = '#1E1E1E'; // колір фону полей вводу
+    input.style.color = '#fff'; // колір полей вводу
   });
-  document.querySelectorAll('.header').forEach(section => {
-      section.style.background = 'linear-gradient(to right, #B7BDC2, #525557)';
+
+  document.querySelectorAll('.tin1').forEach(function (label) {
+    label.style.backgroundColor = '#1E1E1E'; // колір полей підказок
+    label.style.color = '#fff';
   });
-  document.querySelectorAll('.description').forEach(div => {
-      div.style.background = 'linear-gradient(to right, #B7BDC2, #525557)';
+
+  document.querySelectorAll('.current1').forEach(function (a) {
+    a.style.color = '#fff'; // колір "реєстрація"
   });
-  document.querySelectorAll('.foot').forEach(div => {
-      div.style.background = 'linear-gradient(to right, #B7BDC2, #525557)';
+
+  document.querySelectorAll('.separator').forEach(function (span) {
+    span.style.color = '#fff'; // колір розділювачів
   });
-  document.querySelectorAll('.adress').forEach(div => {
-      div.style.color = '#fff';
+
+  document.querySelectorAll('.reg').forEach(function (h1) {
+    h1.style.color = '#fff'; // колір заголовка
   });
+
+  document.querySelectorAll('.submit-btn').forEach(function (button) {
+    button.style.color = '#fff'; // текст кнопки
+    button.style.backgroundColor = 'gray'; // фон кнопки
+  });
+
+  document.querySelectorAll('.header').forEach(function (section) {
+    section.style.background = 'linear-gradient(to right, #B7BDC2, #525557)'; // фон хедера
+  });
+
+  document.querySelectorAll('.description').forEach(function (div) {
+    div.style.background = 'linear-gradient(to right, #B7BDC2, #525557)'; // фон середньої частини
+  });
+
+  document.querySelectorAll('.foot').forEach(function (div) {
+    div.style.background = 'linear-gradient(to right, #B7BDC2, #525557)'; // фон футера
+  });
+
+  document.querySelectorAll('.adress').forEach(function (div) {
+    div.style.color = '#fff'; // колір тексту адреси
+  });
+
   themeLabel.textContent = 'Темна версія';
   isBlack = true;
 }
 
 function applyLightTheme() {
-  document.body.style.backgroundColor = '#fff';
-  document.querySelectorAll('.tin1').forEach(label => label.style.backgroundColor = '#fff');
-  document.querySelectorAll('.tin1').forEach(label => label.style.color = '#000');
-  document.querySelectorAll('.inputLine').forEach(input => {
-    input.style.backgroundColor = '#fff';
-    input.style.borderColor = '#000';
-});
-  document.querySelectorAll('.current2').forEach(a => a.style.color = '#000');
-  document.querySelectorAll('.reg').forEach(h1 => h1.style.color = '#000');
-  document.querySelectorAll('.submit-btn').forEach(button => {
-      button.style.color = '#000';
-      button.style.backgroundColor = 'lightgray';
+  document.body.style.backgroundColor = '#fff'; // колір body
+
+  document.querySelectorAll('.inputLine').forEach(function (input) {
+    input.style.backgroundColor = '#fff'; // фон полей
+    input.style.color = '#000'; // текст полей
   });
-  document.querySelectorAll('.header').forEach(section => {
-      section.style.background = 'linear-gradient(to right, #DADFE2, #787A7C)';
+
+  document.querySelectorAll('.tin1').forEach(function (label) {
+    label.style.backgroundColor = '#fff'; // підказки
+    label.style.color = '#000';
   });
-  document.querySelectorAll('.description').forEach(div => {
-      div.style.background = 'linear-gradient(to right, #DADFE2, #787A7C)';
+
+  document.querySelectorAll('.current1').forEach(function (a) {
+    a.style.color = '#000'; // реєстрація
   });
-  document.querySelectorAll('.foot').forEach(div => {
-      div.style.background = 'linear-gradient(to right, #DADFE2, #787A7C)';
+
+  document.querySelectorAll('.separator').forEach(function (span) {
+    span.style.color = '#000'; // розділювач
   });
-  document.querySelectorAll('.adress').forEach(div => {
-      div.style.color = '#000';
+
+  document.querySelectorAll('.reg').forEach(function (h1) {
+    h1.style.color = '#000'; // заголовок
   });
+
+  document.querySelectorAll('.submit-btn').forEach(function (button) {
+    button.style.color = '#000'; // текст кнопки
+    button.style.backgroundColor = 'lightgray'; // фон кнопки
+  });
+
+  document.querySelectorAll('.header').forEach(function (section) {
+    section.style.background = 'linear-gradient(to right, #DADFE2, #787A7C)'; // фон хедера
+  });
+
+  document.querySelectorAll('.description').forEach(function (div) {
+    div.style.background = 'linear-gradient(to right, #DADFE2, #787A7C)'; // фон середини
+  });
+
+  document.querySelectorAll('.foot').forEach(function (div) {
+    div.style.background = 'linear-gradient(to right, #DADFE2, #787A7C)'; // фон футера
+  });
+
+  document.querySelectorAll('.adress').forEach(function (div) {
+    div.style.color = '#000'; // текст адреси
+  });
+
   themeLabel.textContent = 'Світла версія';
   isBlack = false;
 }
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector(".email-input");
+  const emailInput = form.querySelector("input[type='email']");
+  const submitButton = document.querySelector(".submit-btn");
+
+  // Створюємо контейнер для повідомлень під input'ом
+  const messageBox = document.createElement("div");
+  messageBox.classList.add("message-box");
+  messageBox.style.marginTop = "6px";
+  messageBox.style.fontSize = "14px";
+  messageBox.style.fontWeight = "500";
+  form.appendChild(messageBox);
+
+  submitButton.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    const email = emailInput.value.trim();
+
+    if (!validateEmail(email)) {
+      showMessage("Введіть коректну електронну адресу.", "error");
+      return;
+    }
+
+    simulateSend(email)
+      .then(() => {
+        showMessage("Посилання для відновлення пароля надіслано!", "success");
+        emailInput.value = "";
+      })
+      .catch(() => {
+        showMessage("Виникла помилка при надсиланні. Спробуйте пізніше.", "error");
+      });
+  });
+
+  function validateEmail(email) {
+    const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return pattern.test(email);
+  }
+
+  function simulateSend(email) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        email.includes("fail") ? reject() : resolve();
+      }, 1000);
+    });
+  }
+
+  function showMessage(text, type) {
+    messageBox.textContent = text;
+
+    if (type === "success") {
+      messageBox.style.color = "#155724";
+    } else {
+      messageBox.style.color = "#721c24";
+    }
+  }
+});
+
+
+
 
 
 
