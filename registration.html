@@ -4,7 +4,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Registration</title>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="registration.css">
         <link rel="stylesheet" href="reset.css">
     </head>
     <body>
@@ -25,7 +25,7 @@
                 </div>
                 <section class="SerchSection">
                     <div class="lineSearch">
-                        <div class="athletic">AthletiQ</div>
+                        <a href="../main/main.html"><div class="athletic">AthletiQ</div></a>
                         <form class="searchForm">
                             <input class="search" type="search" name="q" placeholder="Пошук товарів" data-i18n-placeholder="search_placeholder">
                             <div class="search-icon">
@@ -34,34 +34,36 @@
                         </form>
                     </div>
                     <div class="side">
-                        <div class="discount" data-i18n="discounts_title">Акції  %</div>
-                        <img class="photo1" src="images1/0484bc0ef12a2df6ed44af00caebfb32-removebg-preview.png" alt="heart">
-                        <img class="photo2" src="images1/867b6e5cbdbdb4833613b06168c86a6c-removebg-preview.png" alt="person">
+                        <a href="../promotions/promotions.html"><div class="discount" data-i18n="discounts_title">Акції  %</div></a>
+                        <a href="../selected/selected.html"><img class="photo1" src="images1/0484bc0ef12a2df6ed44af00caebfb32-removebg-preview.png" alt="heart"></a>
+                        <a href="../registration/registration.html"><img class="photo2" src="images1/867b6e5cbdbdb4833613b06168c86a6c-removebg-preview.png" alt="person"></a>
                     </div>
                 </section>
             </section>
         </header>
+
+        
         <main>
             <nav class="breadcrumbs">
-                <a href="#" class="current1" data-i18n="breadcrumbs_login">Вхід</a>
-                <span class="separator">›</span>
-                <a href="#" class="current2" data-i18n="breadcrumbs_register">Реєстрація</a>
+                <a href="../main/main.html" class="current1" data-i18n="breadcrumbs_login">Головна</a>
+                <span class="separator">/</span>
+                <a href="../registration/registration.html" class="current2" data-i18n="breadcrumbs_register">Реєстрація</a>
             </nav>
             <div class="head">
                 <h1 class="reg" data-i18n="registration_heading">Реєстрація</h1>
                 <form id="" class="centr" onsubmit="return validateForm()" class="register">
                  
                     <label class="tin1" for="phone" data-i18n="phone_label">Номер телефону</label>
-                    <div class="line"><input class="inputLine" type="tel" data-i18n="phone_placeholder" placeholder="Номер телефону" pattern="\+380\d{9}" required></div>
+                    <div class="line"><input id="phone" class="inputLine" type="tel" data-i18n="phone_placeholder" placeholder="Номер телефону" pattern="\+380\d{9}" required></div>
 
                     <label class="tin1" for="fullName" data-i18n="name_label">ПІБ</label>
-                    <div class="line"><input class="inputLine" type="text" data-i18n="name_placeholder" placeholder="ПІБ" required></div>
+                    <div class="line"><input  id="fullName" class="inputLine" type="text" data-i18n="name_placeholder" placeholder="ПІБ" required></div>
 
                     <label class="tin1" for="password" data-i18n="password_label">Пароль</label>
-                    <div class="line"><input class="inputLine" type="password" data-i18n="password_placeholder" placeholder="Пароль" required></div>
+                    <div class="line"><input  id="password" class="inputLine" type="password" data-i18n="password_placeholder" placeholder="Пароль" required></div>
 
                     <label class="tin1" for="password" data-i18n="password_placeholder">Підтвердіть пароль</label>
-                    <div class="line"><input class="inputLine" type="password" data-i18n="confirm_password_placeholder" placeholder="Підтвердіть пароль" required></div>
+                    <div class="line"><input id="confirmPassword" class="inputLine" type="password" data-i18n="confirm_password_placeholder" placeholder="Підтвердіть пароль" required></div>
 
                     <div class="contButt">
                         <button type="submit" class="submit-btn" data-i18n="submit_button">Створити аккаунт</button>

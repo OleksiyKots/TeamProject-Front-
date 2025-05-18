@@ -4,16 +4,19 @@ const themeToggle = document.getElementById("themeToggle");
 
 themeToggle.addEventListener("change", function() {
     if(themeToggle.checked) {
-        document.body.style.backgroundColor = '#000'; // колір body
+        document.body.style.backgroundColor = '#1E1E1E'; // колір body
         document.querySelectorAll('.inputLine').forEach(function(input) {
-          input.style.backgroundColor = '#000'; // колір фону полей вводу
+          input.style.backgroundColor = '#1E1E1E'; // колір фону полей вводу
           input.style.color = '#fff'; // колір полей вводу
       });
       document.querySelectorAll('.tin1').forEach(function(label) {
         label.style.color = '#fff'; // колір полей підказок
       }); 
-      document.querySelectorAll('.current2').forEach(function(a) {
+      document.querySelectorAll('.current1').forEach(function(a) {
         a.style.color = '#fff'; // колір реєстрація
+      }); 
+      document.querySelectorAll('.separator').forEach(function(span) {
+        span.style.color = '#fff'; // колір реєстрація
       }); 
       document.querySelectorAll('.reg').forEach(function(h1) {
          h1.style.color = '#fff'; // колір реєстрація заголовок
@@ -42,8 +45,11 @@ themeToggle.addEventListener("change", function() {
       document.querySelectorAll('.tin1').forEach(function(label) {
         label.style.color = '#000'; // колір полей підказок
       }); 
-      document.querySelectorAll('.current2').forEach(function(a) {
+      document.querySelectorAll('.current1').forEach(function(a) {
         a.style.color = '#000'; // колір реєстрація
+      }); 
+      document.querySelectorAll('.separator').forEach(function(span) {
+        span.style.color = '#000'; // колір реєстрація
       }); 
       document.querySelectorAll('.reg').forEach(function(h1) {
          h1.style.color = '#000'; // колір реєстрація заголовок
@@ -65,6 +71,71 @@ themeToggle.addEventListener("change", function() {
         isBlack = false;
     }
 })
+
+
+// Відправка
+
+
+document.querySelector('.centr').addEventListener('submit', async function(e) {
+  e.preventDefault(); // Зупиняє стандартну відправку
+
+  const phone = document.getElementById('phone').value.trim();
+  const fullName = document.getElementById('fullName').value.trim();
+  const password = document.getElementById('password').value;
+  const confirmPassword = document.getElementById('confirmPassword').value;
+
+  if (password !== confirmPassword) {
+    alert("Паролі не збігаються.");
+    return;
+  }
+
+  const data = {
+    phone,
+    fullName,
+    password
+  };
+
+  try {
+    const response = await fetch('https://your-backend.com/api/register', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    });
+
+    const result = await response.json();
+
+    if (response.ok) {
+      alert('Реєстрація успішна!');
+      // Можна перенаправити: window.location.href = '/login';
+    } else {
+      alert('Помилка: ' + result.message);
+    }
+  } catch (error) {
+    console.error('Помилка з’єднання:', error);
+    alert('Сервер недоступний. Спробуйте пізніше.');
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -141,6 +141,11 @@
     justify-content: space-between;
 }
 
+.lineSearch a {
+  text-decoration: none;
+  color: #000;
+}
+
 .lineSearch {
     display: flex; 
 }
@@ -215,6 +220,11 @@
     display: flex;
 }
 
+.side a {
+  text-decoration: none;
+  color: #000;
+}
+
 .discount {
     display: flex;
     justify-content: center;
@@ -251,7 +261,7 @@
 }
 
 .current1 {
-  color: #777;
+  color: #000;
   text-decoration: none;
   font-size: 12px;
   font-family: 'Montserrat', sans-serif;
@@ -260,7 +270,7 @@
 }
 
 .current2 {
-  color: black;
+  color: #959090;
   text-decoration: none;
   font-size: 12px;
   font-family: 'Montserrat', sans-serif;
@@ -273,11 +283,12 @@
 }
 
 .breadcrumbs .separator {
-  margin-left: 9px;
-  margin-right: 9px;
-  padding-bottom: 4px;
-  color: #777;
-  font-size: 30px;
+  padding-bottom: 2px;
+  margin-right: 4px;
+  margin-left: 1px;
+  color: #000;
+  font-size: 13px;
+  font-weight: 600;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -571,48 +582,116 @@ label {
   .header {
     height: auto;
     padding-bottom: 10px;
-    flex-direction: column;
+  }
+
+  .slider {
+    height: 10px;
+    width: 15px;
+  }
+
+  .slider::before {
+    height: 8px;
+    width: 8px;
+    left: 2px;
+    top: 1px;
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(3px);
+  }
+
+  .switch {
+    margin: 5px 0 0 0;
+    width: 20px;
+  }
+
+  .tin1 {
+    font-size: 10px !important;
+  }
+  .inputLine {
+    font-size: 10px !important;
   }
 
   .regulation {
     justify-content: end;
-    margin-right: 25px;
   }
 
   .toggle-label {
-    font-size: 12px;
+    font-size: 8px;
     margin-left: 5px;
+    margin-top: -6px;
+  }
+
+  .magnifer {
+    width: 10px;
+    height: 10px;
+    border: 1px solid black;
+  }
+
+  .magnifer::after {
+    height: 7px;
+    right: -2px;
+    bottom: -5px;
+    width: 1px;
   }
 
   .language {
     margin-right: 0;
     justify-content: center;
+    margin-top: 1px;
+  }
+
+  .lineVert button {
+    font-size: 9px;
+  }
+
+  .language button {
+    font-size: 9px;
+  }
+
+  .lineVert::after {
+    height: 15px;
+    margin-top: 3px;
+    width: 1px;
   }
 
   .SerchSection {
-    flex-direction: column;
     align-items: center;
+    margin-top: -25px;
+  }
+  
+  .search {
+    width: 125px;
+    height: 24px;
+    padding: 0;
+    margin: 17px 0 0 0;
+    border-radius: 3px 0 0 3px;
   }
 
-  .lineSearch {
-    display: block;
+  .search::placeholder {
+    font-size: 10px;
   }
 
   .athletic {
-    font-size: 38px;
-    margin: 10px 0;
-    text-align: center;
-  }
-
-  .search {
-    width: 90%;
+    font-size: 13px;
+    margin: 0;
+    margin-top: 24px;
+    margin-right: 19px;
+    padding: 0;
+    width: 100%;
   }
 
   .search-icon {
     margin-left: 0;
-    position: static;
-    width: 35px;
-    margin-left: 295px;
+    width: 25px;
+    height: 24px;
+    margin-left: 124px;
+    margin-top: -24px;
+    border-radius: 0 3px 3px 0;
+  }
+
+  .searchForm {
+    height: 24px;
   }
 
   .side {
@@ -622,40 +701,67 @@ label {
   }
 
   .discount {
-    width: 90%;
-    margin-bottom: 10px;
-    margin-right: 0;
+    width: 41px;
+    height: 24px;
+    font-size: 10px;
+    margin-top: 7px;
+    margin-right: 8px;
   }
 
   .photo2 {
-    margin: 5px auto;
+    height: 25px;
+    width: 26px;
+    margin-right: 5px;
   }
 
   .photo1 {
-    margin: 5px 10px auto 35px;
+    height: 25px;
+    width: 26px;
+    margin-right: 5px;
   }
 
   .centr {
     width: 90%;
-  }
-
-  .submit-btn {
-    width: 50%;
+    margin-left: 50px;
   }
 
   .description {
-    flex-direction: column;
     height: auto;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     text-align: center;
   }
 
   .photo3 {
-    margin: 10px auto;
+    margin: 20px auto 0;
+    height: 38px;
+    width: 41px;
+  }
+  .text1 {
+    font-size: 5.5px;
+    font-weight: 500;
+  }
+  .text2 {
+    font-size: 5.5px;
+    font-weight: 500;
+  }
+  .text3 {
+    font-size: 5.5px;
+    font-weight: 500;
+  }
+  .text4 {
+    font-size: 5.5px;
+    font-weight: 500;
+  }
+  .text5 {
+    font-size: 5.5px;
+    font-weight: 500;
+  }
+  .brand-name {
+    font-size: 8px;
   }
 
-  .boxImages {
-    flex-direction: column;
+  .banner {
+    margin-right: 5px;
   }
 
   .image-container1,
@@ -664,16 +770,95 @@ label {
     height: 200px;
   }
 
-  .foot2 {
-    flex-direction: column;
-  }
-
   .commun,
   .ending {
     margin-left: 20px;
   }
+  .ending {
+    padding-bottom: 38px;
+  }
 
   .appImages {
     margin-left: 20px;
+    display: flex;
+  }
+  .appImages a {
+    width: 37px;
+    height: 30px;
+  }
+
+  .app1 {
+    width: 40px;
+    height: 30px;
+  }
+  .app2 {
+    width: 40px;
+    height: 30px;
+  }
+  .app3 {
+    width: 35px;
+    height: 30px;
+  }
+
+  .email-input {
+    width: 400px;
+  }
+
+  .current1 {
+    font-size: 8px;
+    margin: 0 0 0 5px;
+  }
+  .current2 {
+    font-size: 8px;
+  }
+  .breadcrumbs {
+    padding: 5px 0 0 0;
+  }
+
+  .breadcrumbs .separator {
+    font-size: 9px;
+    margin: 2px 4px 0 0;
+    font-weight: 500;
+  }
+  .submit-btn {
+    width: 110px;
+    height: 28px;
+    font-size: 10px;
+    margin: -20px 0 0 -65px;
+  }
+  .stroc1  {
+    font-size: 10px;
+  }
+  .stroc2  {
+    font-size: 10px;
+  }
+  .stroc3  {
+    font-size: 10px;
+  }
+  .stroc4  {
+    font-size: 10px;
+  }
+  .inforOne {
+    font-size: 12px;
+  }
+  .inforTwo {
+    font-size: 12px;
+  }
+  .email-input {
+    width: 100%;
+  }
+  .reg {
+    font-size: 20px;
+  }
+  .line::after {
+    width: 300px;
+  }
+}
+
+
+
+@media (max-width: 668px) {
+  .adress {
+    font-size: 7px;
   }
 }
