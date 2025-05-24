@@ -1,0 +1,27 @@
+Error: Invalid package config C:\Users\User\Desktop\Університет\PKR-PROJECT\Promotions\test\package.json.
+    at getPackageScopeConfig (node:internal/modules/package_json_reader:160:33)
+    at Object.getFileProtocolModuleFormat [as file:] (node:internal/modules/esm/get_format:116:72)
+    at defaultGetFormatWithoutErrors (node:internal/modules/esm/get_format:232:36)
+    at defaultResolve (node:internal/modules/esm/resolve:1008:13)
+    at ModuleLoader.defaultResolve (node:internal/modules/esm/loader:685:12)
+    at #cachedDefaultResolve (node:internal/modules/esm/loader:634:25)
+    at ModuleLoader.resolve (node:internal/modules/esm/loader:617:38)
+    at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:273:38)
+    at onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:577:36)
+    at TracingChannel.tracePromise (node:diagnostics_channel:344:14) {
+  code: 'ERR_INVALID_PACKAGE_CONFIG'
+}
+
+
+Stacktrace: 
+    at S.syncTopLevel (c:\Users\User\.vscode\extensions\ms-vscode.test-adapter-converter-0.2.1\out\extension.js:6:3)
+    at ed.value (c:\Users\User\.vscode\extensions\ms-vscode.test-adapter-converter-0.2.1\out\extension.js:3:4541)
+    at P.B (file:///c:/Users/User/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2373)
+    at P.fire (file:///c:/Users/User/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2591)
+    at ed.value (c:\Users\User\.vscode\extensions\hbenl.vscode-test-explorer-2.22.1\out\hub\testHub.js:53:43)
+    at P.B (file:///c:/Users/User/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2373)
+    at P.fire (file:///c:/Users/User/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:27:2591)
+    at ChildProcess.handler (c:\Users\User\.vscode\extensions\hbenl.vscode-mocha-test-adapter-2.14.4\out\core.js:91:55)
+    at ChildProcess.emit (node:events:524:28)
+    at emit (node:internal/child_process:950:14)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
