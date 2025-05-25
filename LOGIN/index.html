@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Вхід | AthletiQ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="global.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+</head>
+
+<body class="light-theme">
+    <header>
+        <section class="header">
+            <div class="regulation">
+                <div class="language">
+                    <div class="lineVert"><button onclick="changeLanguage('ua')">UA</button></div>
+                    <div><button onclick="changeLanguage('en')">EN</button></div>
+                </div>
+                <div class="toggle-container">
+                    <span class="toggle-label" id="themeLabel" data-i18n="theme_label" >Світла версія</span>
+                    <label class="switch">
+                      <input type="checkbox" id="themeToggle">
+                      <span class="slider round"></span>
+                    </label>
+                  </div>
+            </div>
+            <section class="SerchSection">
+                <div class="lineSearch">
+                    <div class="athletic">AthletiQ</div>
+                    <form class="searchForm">
+                        <input class="search" type="search" name="q" placeholder="" data-i18n-placeholder="search_placeholder">
+                        <div class="search-icon">
+                            <div class="magnifer"></div>
+                        </div>
+                    </form>
+                </div>
+                <div class="side">
+
+                    <div class="discount" data-i18n="discounts_title">Акції  %</div>
+    
+                   
+                   <div class="popup">
+                    <img id="trigger1" class="photo1" src="../images.PKR/photo_2025-04-05_18-34-59-removebg-preview.png" alt="heart">
+                    <div id="modalWindow1"class="tooltip1">
+                      <div id="triangle" class="arrow-up1"></div>
+                      <a href="#" class="tooltiptext1">Обране</a></div>
+                  </div>
+                  <div class="popup">
+                    <img id="trigger2" class="photo2" src="../images.PKR/photo_2025-04-05_18-35-03-removebg-preview.png" alt="person">
+                    <div id="modalWindow2"class="tooltip2">
+                      <div id="triangle" class="arrow-up2"></div>
+                      <a href="#" class="tooltiptext2">Увійти</a>
+                      <br>
+                      <a href="#" class="tooltiptext3">Зареєструватися</a></div>
+                  </div>
+                </div>
+            </section>
+        </section>
+    </header>
+    <nav class="breadcrumbs">
+        <a href="#" class="current2" data-i18n="breadcrumbs_register">Головна</a>
+        <span class="separator">›</span>
+        <a href="#" class="current1" data-i18n="breadcrumbs_login">Вхід</a>
+    </nav>
+  <main>
+    
+    <section class="login-container">
+      <h2 class="loginH">Вхід</h2>
+      <div class="social-buttons">
+        <div class="border1" >
+            <img class="photoGoogle" src="../images.PKR/--------------2-_2x-removebg-preview.png" alt="google">
+        <div class= "buttonG">
+            <a class="google">Google</a>
+         </div>
+            
+        </div>
+    
+            <div class="border1" >
+                <img class="photoFacebook" src="../images.PKR/--------------7-_2x-removebg-preview.png" alt="facebook">
+                <div class= "buttonF">
+                <a class="facebook">FaceBook</a>
+             </div>  
+            </div>
+        
+              
+      </div>
+
+      <div class="or-text">Або</div>
+      
+
+      <form>
+        <input id="input1" type="email" placeholder="Електронна пошта" required />
+        <div class="text-wrapper-21">показати</div>
+        <img class="element-4" src="https://c.animaapp.com/BqwrOVMC/img/--------------10-@2x.png" />
+      </div>
+        <input id="input" type="password" placeholder="Пароль" required />
+
+        
+        
+        <button type="submit">Увійти</button>
+    
+      </form>
+
+      <div class="links">
+        <a class= "forgot-password"href="#">Забули пароль?</a>
+        <a class="reg" href="#">← Реєстрація</a> 
+      </div>
+    </section>
+  </main>
+    <footer class="bottom">
+        <div class="description">
+            <img class="photo3" src="../images.PKR/photo_2025-04-05_18-34-51-removebg-preview (1).png" alt="heart">
+            
+            <div class="banner">
+                    <div class="narrowing-text">
+                        <div class="text">
+                            <p clas="text1" data-i18n="footer_text1"><span class="brand-name">AthletiQ</span> – це каталог спортивних товарів, створений для тих, хто прагне бути у формі та вести активний спосіб життя.</p>
+                            <p class="text2" data-i18n="footer_text2"> Ми допоможемо вам знайти все необхідне для тренувань, спортивного харчування та відновлення за найкращими </p> 
+                             <p class="text3" data-i18n="footer_text3">цінами. У нашому каталозі ви зможете легко порівняти товари, вибрати оптимальну модель за характеристиками та</p>
+                              <p class="text4" data-i18n="footer_text4">прочитати відгуки інших користувачів. Ми знаємо, як важливо купувати якісне спорядження без переплат, тому </p>
+                                <p class="text5" data-i18n="footer_text5">пропонуємо тільки перевірені варіанти. Досягайте нових вершин разом із AthletiQ! Ваша ціль – наш пріоритет!</p>
+                        </div>
+                    </div>
+            </div>
+           
+        </div>
+        <div class="boxImages">
+            <div class="image-container1"><img class="boxPhoto1" src="../images.PKR/photo_2025-04-05_18-36-28.jpg" alt="boxer girl"></div>
+            <div class="image-container2"><img class="boxPhoto2" src="../images.PKR/photo_2025-04-05_18-36-35.jpg" alt="boxer man"></div>
+        </div>
+        <div class="foot">
+            <div class="foot2">
+                <section class="commun">
+                    <div class="infor1">
+                        <h3 class="inforOne" data-i18n="feedback_title">Зворотній зв'зок</h3>
+                        <div class="informat">
+                            <p class="stroc1" data-i18n="feedback_text1">Є ідеї або пропозиції щодо каталогу?</p>
+                            <p class="stroc2" data-i18n="feedback_text2"> Напиши нам! Ми постійно вдосконалюємо платформу, і твоя думка важлива.</p>
+                        </div>
+                    </div>
+                    <div class="infor2">
+                        <h3 class="inforTwo" data-i18n="disclaimer_title">Відмова від відповідальності </h3>
+                        <div class="informat2">
+                            <p class="stroc3" data-i18n="disclaimer_text1">AthleticQ- це лише каталог. Ми не продаємо товари, а лише допомагаємо знайти</p>
+                            <p class="stroc4" data-i18n="disclaimer_text2">найкращі пропозиції. Всі деталі щодо купівлі уточнюй у продавця.</p>
+                        </div>
+                    </div>
+                </section>
+                <section class="appImages">
+                    <a href="https://www.facebook.com" target="_blank">
+                        <img class="app1" src="../images.PKR/photo_2025-04-05_18-36-12-removebg-preview.png" alt="facebook" width="50">
+                    </a>
+                    <a href="https://www.instagram.com" target="_blank">
+                        <img class="app2" src="../images.PKR/photo_2025-04-05_18-36-03-removebg-preview.png" alt="Instagram" width="50">
+                    </a>
+                    <a href="https://t.me" target="_blank">
+                        <img class="app3" src="../images.PKR/photo_2025-04-05_18-36-15-removebg-preview.png" alt="Telegram" width="50">
+                    </a>
+                </section>
+            </div>
+            <div class="ending"> AthletiQ,  2025 </div>
+        </div>
+    </footer>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
