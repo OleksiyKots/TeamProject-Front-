@@ -1,274 +1,300 @@
-<!DOCTYPE html>
-    <head lang="en">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Main</title>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="main.css">
-        <link rel="stylesheet" href="reset.css">
-    </head>
-    <body>
-        <header>
-            <section class="header">
-                <div class="regulation">
-                    <div class="language">
-                        <div class="lineVert"><button onclick="changeLanguage('ua')">UA</button></div>
-                        <div><button onclick="changeLanguage('en')">EN</button></div>
-                    </div>
-                    <div class="toggle-container">
-                        <span class="toggle-label" id="themeLabel" data-i18n="theme_label" >Світла версія</span>
-                        <label class="switch">
-                          <input type="checkbox" id="themeToggle">
-                          <span class="slider round"></span>
-                        </label>
-                      </div>
-                </div>
-                <section class="SerchSection">
-                    <div class="lineSearch">
-                        <a href="../main/main.html"><div class="athletic">AthletiQ</div></a>
-                        <form class="searchForm">
-                            <input class="search" type="search" name="q" placeholder="Пошук товарів" data-i18n-placeholder="search_placeholder">
-                            <div class="search-icon">
-                                <div class="magnifer"></div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="side">
-                        <a href="../promotions/promotions.html"><div class="discount" data-i18n="discounts_title">Акції  %</div></a>
-                        <a href="../selected/selected.html"><img class="photo1" src="images1/0484bc0ef12a2df6ed44af00caebfb32-removebg-preview.png" alt="heart"></a>
-                        <a href="../registration/registration.html"><img class="photo2" src="images1/867b6e5cbdbdb4833613b06168c86a6c-removebg-preview.png" alt="person"></a>
-                    </div>
-                </section>
-            </section>
-        </header>
-        <main class="sid">
-           <div class="sideBar">
-            <section class="side1">
-                <div class="sideBar2">
-                    <div class="barHeader">
-                        <button class="burger">
-                            <span></span>
-                        </button>
-                        <div class="barText">УСІ КАТЕГОРІЇ</div>
-                    </div>
+{% extends "main/base.html" %}
+{% load static %}
 
-                    <div class="Categories">
-                        <ul class="header__list">
-                            <li>
-                                <div class="card1">
-                                    <div class="cardFr">
-                                        <a href="#"><img src="./photoList/1.png" alt="/"></a>
-                                    </div>
-                                    <a href="#" class="header__link fac1" >Амінокислоти</a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="card1">
-                                    <div class="cardFr">
-                                        <a href="#"><img src="./photoList/2.png" alt="/"></a>
-                                    </div>
-                                    <a href="#" class="header__link fac2">Протеїни</a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="card1">
-                                    <div class="cardFr">
-                                        <a href="#"><img src="./photoList/3.png" alt="/"></a>
-                                    </div>
-                                    <a href="#" class="header__link fac3">Вітаміни</a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="card1">
-                                    <div class="cardFr">
-                                        <a href="#"><img src="./photoList/4.png" alt="/"></a>
-                                    </div>
-                                    <a href="#" class="header__link fac4">Для схуднення</a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="card1">
-                                    <div class="cardFr">
-                                        <a href="#"><img src="./photoList/5.png" alt="/"></a>
-                                    </div>
-                                    <a href="#" class="header__link fac5">Для нарощування м'язів</a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="card1">
-                                    <div class="cardFr">
-                                        <a href="#"><img src="./photoList/6.png" alt="/"></a>
-                                    </div>
-                                    <a href="#" class="header__link fac6">Для тренування вдома</a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="card1">
-                                    <div class="cardFr">
-                                        <a href="#"><img src="./photoList/7.png" alt="/"></a>
-                                    </div>
-                                    <a href="#" class="header__link fac7">Для тренування в залі</a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="card1">
-                                    <div class="cardFr">
-                                        <a href="#"><img src="./photoList/8.png" alt="/"></a>
-                                    </div>
-                                    <a href="#" class="header__link fac8">Інше</a>
-                                </div>
-                            </li>
-                          </ul>
-                    </div>
-                </div>
-       </section>
-        <div class="photo">
-                <div class="text-over">
-                    <div class="textUnder1">Тренуйся.</div>
-                    <div class="textUnder2">Перемагай.</div>
-                    <div class="textUnder3">Repeat.</div>
-                </div>
+{% block title %}AtletiQ{% endblock %}
+
+{% block extra_css %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+<link rel="stylesheet" href="{% static 'main/css/reset.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+
+
+   
+    <!-- Меню Фільтрів -->
+    <div id="filters-panel" style="display: none; border: 1px solid #ccc; padding: 15px; margin-bottom: 20px;">
+        <form method="get" action="{% url 'home' %}">
+            <div class="mb-3">
+                <label for="category">Категорія:</label>
+                <select name="category" id="category">
+                    <option value="">Всі</option>
+                    {% for cat in categories %}
+                        <option value="{{ cat.slug }}">{{ cat.name }}</option>
+                    {% endfor %}
+                </select>                
             </div>
-        </div>
 
-        <div class="hide">
-                <div class="hideText">Вибір категорій:</div>
-                <div class="hideCont">
-                    <a href="#"><img class="cur1" src="./cursor/black2.png" alt="вперед"></a>
-                    <div class="cardHide">
-                        <div class="imageHide"></div>
-                        <div class="vH r1">Вуглеводи</div>
-                    </div>
-                    <div class="cardHide">
-                        <div class="imageHide"></div>
-                        <div class="vH r2">Жироспалювачі</div>
-                    </div>
-                    <div class="cardHide">
-                        <div class="imageHide"></div>
-                        <div class="vH r3">Комплекси вітамінів</div>
-                    </div>
-                    <a href="#"><img class="cur2" src="./cursor/black1.png" alt="вперед"></a>
-                </div>
-        </div>
+            <div class="mb-3">
+                <label for="price_min">Мін. ціна:</label>
+                <input type="number" name="price_min" id="price_min" class="form-control">
+            </div>
 
-        <div class="section-title1">Улюблені серед відвідувачів:</div>
+            <div class="mb-3">
+                <label for="price_max">Макс. ціна:</label>
+                <input type="number" name="price_max" id="price_max" class="form-control">
+            </div>
 
-    <div class="container3">
-        <div class="card">
-            <div class="image-placeholder"></div>
-            <a href="#"><div class="v2">Товар</div></a>
-        </div>
-        <div class="card">
-            <div class="image-placeholder"></div>
-            <a href="#"><div class="v2">Товар</div></a>
-        </div>
-        <div class="card">
-            <div class="image-placeholder"></div>
-            <a href="#"><div class="v2">Товар</div></a>
-        </div>
-        <div class="card">
-            <div class="image-placeholder"></div>
-            <a href="#"><div class="v2">Товар</div></a>
-        </div>
-    </div>
-    
-    <div class="container5">
-        <div class="card">
-            <div class="image-placeholder"></div>
-            <a href="#"><div class="v2">Товар</div></a>
-        </div>
-        <div class="card">
-            <div class="image-placeholder"></div>
-            <a href="#"><div class="v2">Товар</div></a>
-        </div>
-        <div class="card">
-            <div class="image-placeholder"></div>
-            <a href="#"><div class="v2">Товар</div></a>
-        </div>
-        <div class="card">
-            <div class="image-placeholder"></div>
-            <a href="#"><div class="v2">Товар</div></a>
-        </div>
-    </div>
-    
-    <!-- Блок "Останні переглянуті" -->
-    <div class="section-title">Останні переглянуті:</div>
-    
-    <div class="container5">
-        <div class="card">
-            <div class="image-placeholder"></div>
-            <a href="#"><div class="v2">Товар</div></a>
-        </div>
-        <div class="card">
-            <div class="image-placeholder"></div>
-            <a href="#"><div class="v2">Товар</div></a>
-        </div>
-        <div class="card">
-            <div class="image-placeholder"></div>
-            <a href="#"><div class="v2">Товар</div></a>
-        </div>
-        <div class="card">
-            <div class="image-placeholder"></div>
-            <a href="#"><div class="v2">Товар</div></a>
-        </div>
+            <button type="submit" class="btn btn-success">Застосувати</button>
+        </form>
     </div>
 
-        </main>
+    <!-- Список Категорій -->
+    <div id="categoryList" style="display: none;">
+        {% for category in categories %}
+            <div style="margin-bottom: 10px;">
+                <a href="{% url 'category_detail' category.slug %}" class="btn btn-outline-primary w-100 text-start">
+                    {{ category.name }}
+                </a>
+            </div>
+        {% endfor %}
+    </div>
 
-        <footer class="bottom">
-            <div class="description">
-                <img class="photo3" src="images1/68e4b7c58cd938121d4469e70c69ecf6-removebg-preview.png" alt="heart">
-                
-                <div class="banner">
-                        <div class="narrowing-text">
-                            <div class="text">
-                                <p class="text1" data-i18n="footer_text1"><span class="brand-name">AthletiQ</span> – це каталог спортивних товарів, створений для тих, хто прагне бути у формі та вести активний спосіб життя.</p>
-                                <p class="text2" data-i18n="footer_text2"> Ми допоможемо вам знайти все необхідне для тренувань, спортивного харчування та відновлення за найкращими </p> 
-                                 <p class="text3" data-i18n="footer_text3">цінами. У нашому каталозі ви зможете легко порівняти товари, вибрати оптимальну модель за характеристиками та</p>
-                                  <p class="text4" data-i18n="footer_text4">прочитати відгуки інших користувачів. Ми знаємо, як важливо купувати якісне спорядження без переплат, тому </p>
-                                    <p class="text5" data-i18n="footer_text5">пропонуємо тільки перевірені варіанти. Досягайте нових вершин разом із AthletiQ! Ваша ціль – наш пріоритет!</p>
+</div>
+
+
+<main>
+   <div class="sideBar">
+    <section class="side1">
+        <div class="sideBar2">
+            <div class="barHeader">
+                    <button class="btn btn-secondary burger" onclick="toggleFilters()">
+                        <span></span>
+                    </button>
+                    <button class="btn btn-primary mb-4">УСІ КАТЕГОРІЇ</button>
+                    <div id="categoryList" style="display: none;">
+                        {% for category in categories %}
+                            <div style="margin-bottom: 10px;">
+                                <a href="{% url 'category_detail' category.slug %}" class="btn btn-outline-primary w-100 text-start">
+                                    {{ category.name }}
+                                </a>
                             </div>
-                        </div>
-                </div>
-               
+                        {% endfor %}
+                    </div>
             </div>
-            <div class="boxImages">
-                <div class="image-container1"><img class="boxPhoto1" src="photos/00a239f601b99486c8fa2dbda079860f.jfif" alt="boxer girl"></div>
-                <div class="image-container2"><img class="boxPhoto2" src="photos/ebd3470324e617369e6f0a461f163272.jfif" alt="boxer man"></div>
-            </div>
-            <div class="foot">
-                <div class="foot2">
-                    <section class="commun">
-                        <div class="infor1">
-                            <h3 class="inforOne" data-i18n="feedback_title">Зворотній зв'зок</h3>
-                            <div class="informat">
-                                <p class="stroc1" data-i18n="feedback_text1">Є ідеї або пропозиції щодо каталогу?</p>
-                                <p class="stroc2" data-i18n="feedback_text2"> Напиши нам! Ми постійно вдосконалюємо платформу, і твоя думка важлива.</p>
+
+            <div class="Categories">
+                <ul class="header__list">
+                    <li>
+                        <div class="card1">
+                            <div class="cardFr">
+                                <a href="{% url 'category_detail' 'aminokysloti' %}"><img src="{% static 'main/photoList/1.png' %}" alt="/"></a>
                             </div>
+                            <a href="{% url 'category_detail' 'aminokysloti' %}" class="header__link fac1">Амінокислоти</a>
                         </div>
-                        <div class="infor2">
-                            <h3 class="inforTwo" data-i18n="disclaimer_title">Відмова від відповідальності </h3>
-                            <div class="informat2">
-                                <p class="stroc3" data-i18n="disclaimer_text1">AthleticQ- це лише каталог. Ми не продаємо товари, а лише допомагаємо знайти</p>
-                                <p class="stroc4" data-i18n="disclaimer_text2">найкращі пропозиції. Всі деталі щодо купівлі уточнюй у продавця.</p>
+                    </li>
+                    <li>
+                        <div class="card1">
+                            <div class="cardFr">
+                                <a href="{% url 'category_detail' 'proteins' %}"><img src="{% static 'main/photoList/2.png' %}" alt="/"></a>
                             </div>
+                            <a href="{% url 'category_detail' 'proteins' %}" class="header__link fac2">Протеїни</a>
                         </div>
-                    </section>
-                    <section class="appImages">
-                        <a href="https://www.facebook.com" target="_blank">
-                            <img class="app1" src="appImages/84319cc7f5efe7382038410c39141782-removebg-preview.png" alt="facebook" width="50">
-                        </a>
-                        <a href="https://www.instagram.com" target="_blank">
-                            <img class="app2" src="appImages/6d6399c395bff71b4baa788e47058821-removebg-preview.png" alt="Instagram" width="50">
-                        </a>
-                        <a href="https://t.me" target="_blank">
-                            <img class="app3" src="appImages/f83236d73a6d72fbb51af666b31ba4c3-removebg-preview.png" alt="Telegram" width="50">
-                        </a>
-                    </section>
-                </div>
-                <div class="ending"> AthletiQ,  2025 </div>
+                    </li>
+                    <li>
+                        <div class="card1">
+                            <div class="cardFr">
+                                <a href="{% url 'category_detail' 'vuglevody' %}"><img src="{% static 'main/photoList/3.png' %}" alt="/"></a>
+                            </div>
+                            <a href="{% url 'category_detail' 'vuglevody' %}" class="header__link fac3">Вуглеводи</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card1">
+                            <div class="cardFr">
+                                <a href="{% url 'category_detail' 'creatins' %}"><img src="{% static 'main/photoList/4.png' %}" alt="/"></a>
+                            </div>
+                            <a href="{% url 'category_detail' 'creatins' %}" class="header__link fac4">Креатини</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card1">
+                            <div class="cardFr">
+                                <a href="{% url 'category_detail' 'jyrospaluuchi' %}"><img src="{% static 'main/photoList/5.png' %}" alt="/"></a>
+                            </div>
+                            <a href="{% url 'category_detail' 'jyrospaluuchi' %}" class="header__link fac5">Жироспалювачі</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card1">
+                            <div class="cardFr">
+                                <a href="{% url 'category_detail' 'compleksi-vitaminiv' %}"><img src="{% static 'main/photoList/6.png' %}" alt="/"></a>
+                            </div>
+                            <a href="{% url 'category_detail' 'compleksi-vitaminiv' %}" class="header__link fac6">Комплекси вітамінів</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card1">
+                            <div class="cardFr">
+                                <a href="{% url 'category_detail' 'gaineri' %}"><img src="{% static 'main/photoList/7.png' %}" alt="/"></a>
+                            </div>
+                            <a href="{% url 'category_detail' 'gaineri' %}" class="header__link fac7">Гейнери</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card1">
+                            <div class="cardFr">
+                                <a href="{% url 'category_detail' 'rizne' %}"><img src="{% static 'main/photoList/8.png' %}" alt="/"></a>
+                            </div>
+                            <a href="{% url 'category_detail' 'rizne' %}" class="header__link fac8">Різне</a>
+                        </div>
+                    </li>
+                  </ul>
             </div>
-        </footer>
-        <script src="main.js"></script>
-    </body>
-</html>
+        </div>
+</section>
+<div class="photo">
+        <div class="text-over">
+            <div class="textUnder1">Тренуйся.</div>
+            <div class="textUnder2">Перемагай.</div>
+            <div class="textUnder3">Repeat.</div>
+        </div>
+    </div>
+</div>
+
+<div class="hide">
+        <div class="hideText">Вибір категорій:</div>
+        <div class="hideCont">
+            <a href="#"><img class="cur1" src="{% static 'main/cursor/black2.png' %}" alt="вперед"></a>
+            <div class="cardHide">
+                <div class="imageHide"></div>
+                <div class="vH r1">Вуглеводи</div>
+            </div>
+            <div class="cardHide">
+                <div class="imageHide"></div>
+                <div class="vH r2">Жироспалювачі</div>
+            </div>
+            <div class="cardHide">
+                <div class="imageHide"></div>
+                <div class="vH r3">Комплекси вітамінів</div>
+            </div>
+            <a href="#"><img class="cur2" src="{% static 'main/cursor/black1.png' %}" alt="вперед"></a>
+        </div>
+</div>
+
+<div class="section-title1">Улюблені серед відвідувачів:</div>
+
+<div class="container3">
+<div class="card">
+    <div class="cardF">
+        <a href="{% url 'category_detail' 'rizne' %}"><img src="{% static 'main/photoList/8.png' %}" alt="/"></a>
+    </div>
+    <a href="{% url 'category_detail' 'rizne' %}" class="tovary">Товар</a>
+</div>
+<div class="card">
+    <div class="cardF">
+        <a href="{% url 'category_detail' 'gaineri' %}"><img src="{% static 'main/photoList/7.png' %}" alt="/"></a>
+    </div>
+    <a href="{% url 'category_detail' 'gaineri' %}" class="tovary">Товар</a>
+</div>
+<div class="card">
+    <div class="cardF">
+        <a href="{% url 'category_detail' 'compleksi-vitaminiv' %}"><img src="{% static 'main/photoList/6.png' %}" alt="/"></a>
+    </div>
+    <a href="{% url 'category_detail' 'compleksi-vitaminiv' %}" class="tovary">Товар</a>
+</div>
+<div class="card">
+    <div class="cardF">
+        <a href="{% url 'category_detail' 'aminokysloti' %}"><img src="{% static 'main/photoList/1.png' %}" alt="/"></a>
+    </div>
+    <a href="{% url 'category_detail' 'aminokysloti' %}" class="tovary">Товар</a>
+</div>
+</div>
+
+<div class="container5">
+<div class="card">
+    <div class="cardF">
+        <a href="{% url 'category_detail' 'vuglevody' %}"><img src="{% static 'main/photoList/3.png' %}" alt="/"></a>
+    </div>
+    <a href="{% url 'category_detail' 'vuglevody' %}" class="tovary">Товар</a>
+</div>
+<div class="card">
+    <div class="cardF">
+        <a href="{% url 'category_detail' 'jyrospaluuchi' %}"><img src="{% static 'main/photoList/5.png' %}" alt="/"></a>
+    </div>
+    <a href="{% url 'category_detail' 'jyrospaluuchi' %}" class="tovary">Товар</a>
+</div>
+<div class="card">
+    <div class="cardF">
+        <a href="{% url 'category_detail' 'creatins' %}"><img src="{% static 'main/photoList/4.png' %}" alt="/"></a>
+    </div>
+    <a href="{% url 'category_detail' 'creatins' %}" class="tovary">Товар</a>
+</div>
+<div class="card">
+    <div class="cardF">
+        <a href="{% url 'category_detail' 'gaineri' %}"><img src="{% static 'main/photoList/7.png' %}" alt="/"></a>
+    </div>
+    <a href="{% url 'category_detail' 'gaineri' %}" class="tovary">Товар</a>
+</div>
+</div>
+
+<!-- Блок "Останні переглянуті" -->
+<div class="section-title">Останні переглянуті:</div>
+
+<div class="container5">
+<div class="card">
+    <div class="cardF">
+        <a href="{% url 'category_detail' 'gaineri' %}"><img src="{% static 'main/photoList/7.png' %}" alt="/"></a>
+    </div>
+    <a href="{% url 'category_detail' 'gaineri' %}" class="tovary">Товар</a>
+</div>
+<div class="card">
+    <div class="cardF">
+        <a href="{% url 'category_detail' 'vuglevody' %}"><img src="{% static 'main/photoList/3.png' %}" alt="/"></a>
+    </div>
+    <a href="{% url 'category_detail' 'vuglevody' %}" class="tovary">Товар</a>
+</div>
+<div class="card">
+    <div class="cardF">
+        <a href="{% url 'category_detail' 'aminokysloti' %}"><img src="{% static 'main/photoList/1.png' %}" alt="/"></a>
+    </div>
+    <a href="{% url 'category_detail' 'aminokysloti' %}" class="tovary">Товар</a>
+</div>
+<div class="card">
+    <div class="car">
+        <a href="{% url 'category_detail' 'rizne' %}"><img src="{% static 'main/photoList/8.png' %}" alt="/"></a>
+    </div>
+    <a href="{% url 'category_detail' 'rizne' %}" class="tovary">Товар</a>
+</div>
+</div>
+</main>
+{% endblock %}
+
+        
+        {% block scripts %}
+        <script src="{% static 'main/js/main.js' %}"></script>
+        <script src="{% static 'main/js/base.js' %}"></script>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const favoritesButton = document.getElementById('favorites-button');
+
+    favoritesButton.addEventListener('click', function() {
+        if (isAuthenticated === "true") {
+            window.location.href = "{% url 'favorites_list' %}";
+        } else {
+            if (confirm("Щоб додати в обране, потрібно увійти або зареєструватися.\n\nНатисніть OK для переходу на сторінку входу.")) {
+                window.location.href = "{% url 'login' %}";
+            }
+        }
+    });
+});
+
+function toggleElementDisplay(id) {
+        const el = document.getElementById(id);
+        const isHidden = window.getComputedStyle(el).display === "none";
+        el.style.display = isHidden ? "block" : "none";
+    }
+
+    function toggleFilters() {
+        toggleElementDisplay("filters-panel");
+    }
+
+    function toggleCategories() {
+        toggleElementDisplay("categoryList");
+    }
+console.log("Скрипт підключився успішно");
+</script>
+{% endblock %}
+

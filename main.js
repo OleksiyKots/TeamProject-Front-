@@ -109,7 +109,51 @@ themeToggle.addEventListener("change", function() {
 
 
 
+const trigger1 = document.getElementById("trigger1");
+    const popup1 = document.getElementById("modalWindow1");
+    const trigger2 = document.getElementById("trigger2");
+    const popup2 = document.getElementById("modalWindow2");
+    const triangle = document.getElementById("triangle");
 
+    let mouseOverPopup = false;
+
+    trigger1.addEventListener("mouseenter", () => {
+      popup1.style.display = "block";
+    });
+    trigger2.addEventListener("mouseenter", () => {
+      popup2.style.display = "block";
+    });
+
+    trigger1.addEventListener("mouseleave", () => {
+      setTimeout(() => {
+        if (!mouseOverPopup) {
+          popup1.style.display = "none";
+        }
+      }, 200);
+    });
+    trigger2.addEventListener("mouseleave", () => {
+      setTimeout(() => {
+        if (!mouseOverPopup) {
+          popup2.style.display = "none";
+        }
+      }, 200);
+    });
+
+    popup1.addEventListener("mouseenter", () => {
+      mouseOverPopup = true;
+    });
+    popup2.addEventListener("mouseenter", () => {
+      mouseOverPopup = true;
+    });
+
+    popup1.addEventListener("mouseleave", () => {
+      mouseOverPopup = false;
+      popup1.style.display = "none";
+    });
+    popup2.addEventListener("mouseleave", () => {
+      mouseOverPopup = false;
+      popup2.style.display = "none";
+    });
 
 
 
